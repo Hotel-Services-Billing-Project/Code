@@ -7,7 +7,7 @@ class Start
        System.out.println("***************************");
        System.out.println("Welcome to ABC Hotel");
        System.out.println("***************************");
-       System.out.println("Menu : 1.Register a room \n 2.Avail Services \n 3.Exciting the Hotel ");
+       System.out.println("Menu : 1.Register a room \n 2.Avail Services \n 3.Exiting the Hotel ");
        System.out.println("Enter the number against the options to proceed ");
        int t=s.nextInt();
        switch(t)
