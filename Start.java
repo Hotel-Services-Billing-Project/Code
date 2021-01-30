@@ -66,20 +66,34 @@ class A{
               new Start().regiser(); */
 class B{
     Scanner Sc=new Scanner(System.in);
-system.out.println("Please enter your unique reference code for services");
-ur=Sc.nextint()
-system.out.println("Please choose what type of services you require from below");
-       System.out.println("Menu : 1.Cleaning \n 2.Food Services \n 3.Laundry \n 4.Medical Service \n 5.Booking a Cab \n ");
-       System.out.println("Thank you for your patience, we will get back to you in no time :) ");
-       int c=s.nextInt();
+    system.out.println("Please enter your unique reference code for services");
+    ur=Sc.nextint()
+    system.out.println("Please choose what type of services you require from below");
+    System.out.println("Menu : 1.Cleaning \n 2.Food Services \n 3.Laundry \n 4.Medical Service \n 5.Booking a Cab \n ");
+    System.out.println("Thank you for your patience, we will get back to you in no time :) ");
+    int c=s.nextInt();
+    public void reception(){
+     System.out.println("Thank you for calling, we will provide services in no time");
+     amt=amt+300;}
+    public void reception1(){
+     System.out.println("Thank you for calling,be ready for cab");
+     amt=amt+500;} 
+    public void restaurant(){
+	if(order==VEG)
+	System.out.println("Thank You for choosing Veg section, we will bring your order Fresh and Hot");
+	amt=amt+400;
+	else
+	System.out.println("Thank You for choosing NON-Veg section, we will bring your order Fresh and Hot");
+	amt=amt+500;}
 switch(c)
        {
            case 1: System.out.println("We will send the Cleaning team to your room \n");
                    reception();
            //We need to call reception here for cleaning service
                    break;
-           case 2: System.out.println("Please enter your order, it might take atleast 15 minutes for your order \n");
-                   restaurant();
+           case 2: System.out.println("Please state whether you prefere VEG or NON-VEG, it might take atleast 10 minutes for your order \n");
+                   order=Sc.nextLine;
+		   restaurant();
 	   // We need to call the restaurant here
                    break;
            case 3: System.out.println("Our team will there at your room shortly \n");
@@ -90,8 +104,7 @@ switch(c)
 		   reception();
 	   //We need to call reception for Doctor or medical emergency
 	   case 5: System.out.println("Please state your destnation for cab services")
-		   Destination=Sc.nextLine();
-		   reception();
+		   reception1();
 	   //We need to call reception for cab
           default:System.out.println("Please Enter a correct option :) ");                       
        }}
