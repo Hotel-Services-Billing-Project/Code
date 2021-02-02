@@ -96,7 +96,7 @@ switch(c)
 		   restaurant();
 	   // We need to call the restaurant here
                    break;
-           case 3: System.out.println("Our team will there at your room shortly \n");
+           case 3: System.out.println("Our team will be there at your room shortly \n");
 		   reception();
            //We need to call reception here for laundry
                    break;
