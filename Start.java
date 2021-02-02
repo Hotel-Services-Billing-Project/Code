@@ -3,6 +3,7 @@ public class Start extends A
 {
     public static void main(String args[]){
             new Start();
+	    new Services();
             }
        Start(){     
        Scanner s=new Scanner(System.in);
@@ -64,49 +65,63 @@ class A{
         }
       }      /* public static void main(String ar[]){
               new Start().regiser(); */
-class B{
+public class Services extends B
+{
+ class B{
     Scanner Sc=new Scanner(System.in);
-	public void reception(){
-    System.out.println("Please enter your unique reference code for services");
-    ur=Sc.nextint();
-    System.out.println("Please choose what type of services you require from below");
-    System.out.println("Menu : 1.Cleaning \n 2.Food Services \n 3.Laundry \n 4.Medical Service \n 5.Booking a Cab \n ");
-    System.out.println("Thank you for your patience, we will get back to you in no time :) ");
-    int c=s.nextInt();
-     System.out.println("Thank you for calling, we will provide services in no time");
-     amt=amt+300;}
-    public void reception1(){
+	public void reception()
+	 {
+    	  System.out.println("Please enter your unique reference code for services");
+    	  ur=Sc.nextint();
+    	  System.out.println("Please choose what type of services you require from below");
+    	  System.out.println("Menu : 1.Cleaning \n 2.Food Services \n 3.Laundry \n 4.Medical Service \n 5.Booking a Cab \n ");
+	  System.out.println("Thank you for your patience, we will get back to you in no time :) ");
+    	  int c=s.nextInt();
+     	  System.out.println("Thank you for calling, we will provide services in no time");
+     	  amt=amt+300;
+	 }
+    public void reception1()
+    {
      System.out.println("Thank you for calling,be ready for cab");
-     amt=amt+500;} 
-    public void restaurant(){
-	if(order==VEG){
+     amt=amt+500;
+    } 
+    public void restaurant()
+   {
+	if(order==VEG)
+       {
 	System.out.println("Thank You for choosing Veg section, we will bring your order Fresh and Hot");
-	amt=amt+400;}
+	amt=amt+400;
+       }
 	else
 	System.out.println("Thank You for choosing NON-Veg section, we will bring your order Fresh and Hot");
-	amt=amt+500;}
-switch(c)
-       {
-           case 1: System.out.println("We will send the Cleaning team to your room \n");
+	amt=amt+500;
+    }
+ }
+	Services()
+	{
+	 switch(c)
+           {
+            case 1: System.out.println("We will send the Cleaning team to your room \n");
                    reception();
-           //We need to call reception here for cleaning service
+            //We need to call reception here for cleaning service
                    break;
-           case 2: System.out.println("Please state whether you prefere VEG or NON-VEG, it might take atleast 10 minutes for your order \n");
+            case 2: System.out.println("Please state whether you prefere VEG or NON-VEG, it might take atleast 10 minutes for your order \n");
                    order=Sc.nextLine;
 		   restaurant();
-	   // We need to call the restaurant here
+	    // We need to call the restaurant here
                    break;
-           case 3: System.out.println("Our team will be there at your room shortly \n");
+            case 3: System.out.println("Our team will be there at your room shortly \n");
 		   reception();
-           //We need to call reception here for laundry
+            //We need to call reception here for laundry
                    break;
-	   case 4: System.out.println("Please tell your emergency doctor will be arriving");
+	    case 4: System.out.println("Please tell your emergency doctor will be arriving");
 		   reception();
-	   //We need to call reception for Doctor or medical emergency
+	    //We need to call reception for Doctor or medical emergency
 		   break;
-	   case 5: System.out.println("Please state your destnation for cab services");
+	    case 5: System.out.println("Please state your destnation for cab services");
 		   reception1();
-	   //We need to call reception for cab
+	    //We need to call reception for cab
 		   break;
-          default:System.out.println("Please Enter a correct option :) ");                       
-       }}
+            default:System.out.println("Please Enter a correct option :) ");                       
+           }
+	}
