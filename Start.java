@@ -79,9 +79,9 @@ class B{
      System.out.println("Thank you for calling,be ready for cab");
      amt=amt+500;} 
     public void restaurant(){
-	if(order==VEG)
+	if(order==VEG){
 	System.out.println("Thank You for choosing Veg section, we will bring your order Fresh and Hot");
-	amt=amt+400;
+	amt=amt+400;}
 	else
 	System.out.println("Thank You for choosing NON-Veg section, we will bring your order Fresh and Hot");
 	amt=amt+500;}
