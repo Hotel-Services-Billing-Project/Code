@@ -66,9 +66,9 @@ class A{
               new Start().regiser(); */
 class B{
     Scanner Sc=new Scanner(System.in);
-    system.out.println("Please enter your unique reference code for services");
+    System.out.println("Please enter your unique reference code for services");
     ur=Sc.nextint()
-    system.out.println("Please choose what type of services you require from below");
+    System.out.println("Please choose what type of services you require from below");
     System.out.println("Menu : 1.Cleaning \n 2.Food Services \n 3.Laundry \n 4.Medical Service \n 5.Booking a Cab \n ");
     System.out.println("Thank you for your patience, we will get back to you in no time :) ");
     int c=s.nextInt();
