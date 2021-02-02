@@ -103,7 +103,7 @@ switch(c)
 	   case 4: System.out.println("Please tell your emergency doctor will be arriving");
 		   reception();
 	   //We need to call reception for Doctor or medical emergency
-	   case 5: System.out.println("Please state your destnation for cab services")
+	   case 5: System.out.println("Please state your destnation for cab services");
 		   reception1();
 	   //We need to call reception for cab
           default:System.out.println("Please Enter a correct option :) ");                       
