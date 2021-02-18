@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.time.*;
 import java.util.*;
 public class Start extends A
 {
@@ -13,32 +14,42 @@ public class Start extends A
        PreparedStatement r=null;
        PreparedStatement q=null;
        PreparedStatement z=null;
-       Statement d=null;        
+       Statement d=null;
+       //int i=1;        
        Scanner s=new Scanner(System.in);
+       int[] a=new int[10];
+       //String nn = new String();//line 71
+       
        //int dg=5;
        //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/first","root","root");
        System.out.println();
        System.out.println("***************************");
        System.out.println("Welcome to ABC Hotel");
        System.out.println("***************************");
-       System.out.println("Menu : 1.Register a room \n 2.Avail Services \n 3.Exiting the Hotel ");
+       System.out.println("Menu : 1.Register a room \n 2.Avail Services \n 3.Exciting the Hotel ");
        System.out.println("Enter the number against the options to proceed ");
        int t=s.nextInt();
        switch(t)
        {
            case 1: System.out.println("You are in a step closer to regiser the room ");
                    register();
-                   //System.out.println(ur)
-                   double y=Math.random() * 99;
+                   //int i=1;
+                   //a[i]=1;
+                   //System.out.println(i);
+                   double y=Math.random() * 999;
                    int x=(int)y;
+                   //System.out.println("Room no is "+i);
                    System.out.println("Following are your credentials for any support inside our premises");
                    System.out.println("name : "+name);
                    System.out.println("UniqueReference "+x);
-                   r=con.prepareStatement("insert into sample values(?,?,?,?)");
+                   LocalDate ld=LocalDate.now();
+                   String xj=ld.toString();
+                   r=con.prepareStatement("insert into sample values(?,?,?,?,?)");
                    r.setInt(1,x);
                    r.setString(2,name);
-                   r.setString(3,name);
+                   r.setString(3,xj);
                    r.setInt(4,0);
+                   r.setInt(5,0);
                    //System.out.println("Entering");
                    int n=r.executeUpdate();
                    if(r==null)
@@ -52,20 +63,41 @@ public class Start extends A
                    break;
            case 2: System.out.println("Its glad that you wish to avail our services ");
            /* We need to call the services function here */
+                //   System.out.println("Enter your name");
+                  // String nn=s.nextLine();
                    System.out.println("Enter your ur");
                    int c=s.nextInt();
+                   System.out.println();
                    ///CONTINUE FROM HERE
+                 //  System.out.println("Enter your name");
+                  // String nn=s.nextLine();
+                  // int hg=s.nextInt();
+                   //System.out.println(hg);
                    d=con.createStatement();
-                   ResultSet rs=d.executeQuery("select name from sample where roll = "+c);
+                   int tpr=0;
+                   ResultSet rs=d.executeQuery("select name,bill from sample where roll = "+c);
                    if(rs.next())
-                   System.out.println(rs.getString(1));
+                   System.out.println(rs.getString(1)+" "+rs.getInt(2));
+                   String dn=rs.getString(1);
+                   if(rs.getInt(2)==0)
+                           tpr=0;      //temporary price
+                   else{
+                           tpr+=rs.getInt(2);
+                   }
+                    System.out.println("******** \n Validating your credentials \n ********* ");
+                 //  if(dn.equals(nn)){
                    service();
                    //System.out.println(pr);
                    q=con.prepareStatement("update sample set bill = ? where roll = ? ");
-                   q.setInt(1,pr);
+                   tpr+=pr;
+                   q.setInt(1,tpr);
                    q.setInt(2,c);
-                   int i=q.executeUpdate();
-                   System.out.println(i);
+                   int yj=q.executeUpdate();
+                   System.out.println(yj);
+                 /*  }
+                   else{
+                           System.out.println("You've entered something wrong ");
+                   } */
                    break;
            case 3: System.out.println("Thanks for spending your time in our Hotel ");
            //We need to call Billing function here
@@ -78,9 +110,20 @@ public class Start extends A
                    System.out.println(ds.getString(1) +"  "+ ds.getInt(2));
                    int pay=ds.getInt(2);
                    System.out.println("Your bill is "+pay+" \n Pay the bill ");
+                   System.out.println("*******************   \n *****************");
+                   System.out.println("Yess you've completed billing.\n Please provide your valuable feedback");
+                   System.out.println("Rate us on a scale of 3");
+                   int fb=s.nextInt();
+                   z=con.prepareStatement("update sample set feedback = ? where roll = ? ");
+                   z.setInt(1,fb);
+                   z.setInt(2,h);
+                   int df=z.executeUpdate();
+                   System.out.println(df);
+                   System.out.println("THANK YOU WE LOOK FORWARD TO SEE YOU AGAIN");
                    break;
           default:System.out.println("Please Enter a correct option :) ");                       
-       }}
+       }
+       }
        catch(Exception e){}
 }}  
 class A{
@@ -89,8 +132,7 @@ class A{
         String name=new String();
         int days;
         int amt=1000;
-        int[] a=new int[100];
-        static int i=0;
+        int s=0;
         int pr=0;
            //Class.forName("com.mysql.jdbc.Driver");
            //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/first","root","root");
@@ -102,8 +144,9 @@ class A{
                 name=Sc.nextLine();
                 System.out.print("  Hello "+name+" how many days do you want to stay : ");
                 days=Sc.nextInt();
-                a[i]=1;
+                //s++;
                 System.out.println("Your room is registered successfully...");
+                //int h=getinc();
                /* System.out.println("Following are your credentials for any support inside our premises");
                 System.out.println("name : "+name);
                 System.out.println("UniqueReference "); */
@@ -114,7 +157,6 @@ class A{
                 int check =Sc.nextInt();
                 if(check==1){
                 System.out.println("Yess,you can take your room,Dont forget to ping us for any services/support ");
-                i++;
                 //r=con.prepareStatement("insert into sample values(ur,name,'BCoM')");
                 //r.executeUpdate();
                 //con.close();
